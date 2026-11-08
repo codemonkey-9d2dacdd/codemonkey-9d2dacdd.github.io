@@ -1,0 +1,1245 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>今日大赛在线观看-赛事直播入口与实时赛程_体育大赛在线观看指南</title>
+  <meta name="description" content="今日大赛在线观看专题页，提供热门体育赛事直播入口、实时赛程、赛果速递与观看指南。涵盖足球、篮球、电竞、网球等大赛在线观看方式，助你快速找到当日焦点赛事直播与回放资源，不错过任何精彩对决。">
+  <meta name="keywords" content="今日大赛在线观看,体育赛事直播,大赛直播入口,在线看比赛,今日赛事赛程">
+  <style>
+    /* ---------- 全局变量与重置 ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-page: #f5f9fc;
+      --bg-card: #ffffff;
+      --bg-soft: #eef5fa;
+      --border-light: #d9e4ed;
+      --text-main: #1a2c3e;
+      --text-sub: #4a6279;
+      --text-muted: #7a8f9f;
+      --accent: #0f6b9c;
+      --accent-light: #e1f0fa;
+      --accent-hover: #0b547a;
+      --green: #1e8f6e;
+      --orange: #d97706;
+      --shadow-sm: 0 4px 12px rgba(0, 30, 60, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 30, 60, 0.06);
+      --radius-card: 14px;
+      --radius-btn: 30px;
+      --font-sys: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      font-family: var(--font-sys);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- 通用区块头 ---------- */
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .section-head h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 5px;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    .section-head .more-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--accent);
+      border-bottom: 1px dashed var(--accent-light);
+    }
+
+    /* ---------- 导航 ---------- */
+    .top-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 12px 0;
+      gap: 16px;
+    }
+
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .logo-text span {
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-sub);
+    }
+
+    .nav-links a {
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-actions .btn-soft {
+      background: var(--bg-soft);
+      border-radius: var(--radius-btn);
+      padding: 6px 16px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-sub);
+      border: 1px solid transparent;
+    }
+
+    .nav-actions .btn-soft:hover {
+      background: var(--accent-light);
+      border-color: var(--accent);
+    }
+
+    /* ---------- 首屏 Banner ---------- */
+    .hero-section {
+      background: linear-gradient(145deg, #e9f2fa 0%, #ffffff 100%);
+      padding: 42px 0 48px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-content {
+      flex: 1 1 460px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .hero-content h1 em {
+      font-style: normal;
+      color: var(--accent);
+      background: linear-gradient(120deg, var(--accent-light) 0%, transparent 80%);
+      padding: 0 6px;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-sub);
+      margin-bottom: 28px;
+      max-width: 600px;
+    }
+
+    .hero-search {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .hero-search input {
+      flex: 1 1 260px;
+      padding: 14px 22px;
+      border-radius: var(--radius-btn);
+      border: 1px solid var(--border-light);
+      background: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.2s, border 0.2s;
+    }
+
+    .hero-search input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-light);
+    }
+
+    .hero-search button {
+      padding: 14px 32px;
+      border-radius: var(--radius-btn);
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .hero-search button:hover {
+      background: var(--accent-hover);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-tags a {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      font-weight: 500;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-tags a:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .hero-visual {
+      flex: 1 1 280px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-poster {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #1a2c3e 0%, #2f5e7a 100%);
+      border-radius: 24px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .hero-poster .live-badge {
+      background: #e63946;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .hero-poster .poster-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .hero-poster .poster-sub {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 12px;
+    }
+
+    /* ---------- 内容简介 ---------- */
+    .intro-section {
+      padding: 56px 0 32px;
+    }
+
+    .intro-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 36px 40px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      font-size: 1.02rem;
+      color: var(--text-sub);
+      line-height: 1.8;
+    }
+
+    .intro-card p {
+      margin-bottom: 14px;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-card strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* ---------- 热门推荐卡片网格 ---------- */
+    .hot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 24px;
+    }
+
+    .hot-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 20px 20px 18px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hot-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hot-card .card-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 3px 10px;
+      border-radius: 30px;
+      align-self: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .hot-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .hot-card .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .hot-card .meta-tags span {
+      font-size: 0.72rem;
+      background: var(--bg-soft);
+      padding: 3px 10px;
+      border-radius: 30px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hot-card .excerpt {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .hot-card .stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-light);
+      padding-top: 14px;
+      font-weight: 500;
+    }
+
+    .hot-card .stats span:first-child {
+      color: var(--orange);
+    }
+
+    /* ---------- 最新更新列表 ---------- */
+    .update-list {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .update-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px 24px;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.95rem;
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-item .update-title {
+      font-weight: 600;
+      color: var(--text-main);
+      min-width: 180px;
+      flex: 0 0 auto;
+    }
+
+    .update-item .update-desc {
+      color: var(--text-sub);
+      flex: 1;
+    }
+
+    .update-item .update-time {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    /* ---------- 分类入口 ---------- */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .cat-item {
+      background: var(--bg-card);
+      border-radius: 30px;
+      padding: 14px 20px;
+      text-align: center;
+      font-weight: 600;
+      color: var(--text-main);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .cat-item:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- 深度解析正文 ---------- */
+    .deep-dive {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 40px 44px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .deep-dive h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 28px 0 12px;
+      color: var(--text-main);
+    }
+
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      margin-bottom: 16px;
+      color: var(--text-sub);
+      font-size: 1.02rem;
+      line-height: 1.85;
+    }
+
+    .deep-dive ul {
+      margin: 12px 0 20px;
+      padding-left: 22px;
+      list-style: disc;
+      color: var(--text-sub);
+    }
+
+    .deep-dive li {
+      margin-bottom: 8px;
+    }
+
+    /* ---------- 体验指南 ---------- */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .guide-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 24px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guide-card .guide-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .guide-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .guide-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* ---------- FAQ 手风琴 ---------- */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 4px 0;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      padding: 18px 28px;
+      font-weight: 600;
+      font-size: 1.02rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      color: var(--text-main);
+      list-style: none;
+    }
+
+    .faq-q::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-q::after {
+      content: '＋';
+      font-weight: 400;
+      color: var(--accent);
+      font-size: 1.3rem;
+      transition: transform 0.2s;
+    }
+
+    details[open] .faq-q::after {
+      content: '－';
+      transform: rotate(0deg);
+    }
+
+    .faq-a {
+      padding: 0 28px 22px;
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      border-top: 1px solid var(--border-light);
+      padding-top: 18px;
+      margin-top: 2px;
+    }
+
+    /* ---------- 评论 ---------- */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .comment-item {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 18px 20px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .comment-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .comment-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .comment-date {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    .comment-text {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+
+    /* ---------- 资讯卡片 ---------- */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .news-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-light);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .news-card .news-date {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .news-card h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+
+    .news-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ---------- footer ---------- */
+    .site-footer {
+      background: #1a2c3e;
+      color: #b8ccda;
+      padding: 48px 0 32px;
+      margin-top: 60px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+      color: #b8ccda;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #2d4459;
+      padding-top: 24px;
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 820px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-grid {
+        gap: 24px;
+      }
+
+      .hero-poster {
+        max-width: 100%;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 6px;
+      }
+
+      .deep-dive {
+        padding: 28px 22px;
+      }
+
+      .intro-card {
+        padding: 28px 22px;
+      }
+
+      .update-item {
+        flex-direction: column;
+        gap: 6px;
+        padding: 16px 20px;
+      }
+
+      .update-item .update-title {
+        min-width: unset;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.7rem;
+      }
+
+      .section-head h2 {
+        font-size: 1.4rem;
+      }
+
+      .hot-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 辅助 */
+    .mt-4 {
+      margin-top: 32px;
+    }
+
+    .mb-4 {
+      margin-bottom: 32px;
+    }
+
+    .section {
+      padding: 44px 0;
+    }
+
+    .bg-soft-block {
+      background: var(--bg-soft);
+      border-radius: 32px;
+      padding: 44px 0;
+      margin: 28px 0;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- ========== 导航 ========== -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <div class="logo-badge">
+        <div class="logo-icon">赛</div>
+        <div class="logo-text">今日大赛<span>在线观看</span></div>
+      </div>
+      <nav class="nav-links">
+        <a href="/#live-entry">直播入口</a>
+        <a href="/#hot-match">热门赛事</a>
+        <a href="/#schedule">今日赛程</a>
+        <a href="/#analysis">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#news">赛事资讯</a>
+        <a href="/#comments">网友评论</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn-soft" href="/#subscribe">订阅提醒</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== 首屏 Banner ========== -->
+  <section class="hero-section" id="live-entry">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1><em>今日大赛在线观看</em> 实时直播与赛程全指南</h1>
+        <p class="hero-desc">
+          一站式聚合今日热门体育大赛在线观看入口，覆盖足球、篮球、电竞、网球等焦点赛事。
+          实时更新直播信号、比分动态与专业赛前解析，帮你在第一时间找到可靠观看渠道。
+        </p>
+        <div class="hero-search">
+          <input type="text" placeholder="搜索赛事名称、队伍或联赛…" aria-label="搜索赛事">
+          <button type="button">搜索直播</button>
+        </div>
+        <div class="hero-tags">
+          <a href="/#hot-match">足球</a>
+          <a href="/#hot-match">篮球</a>
+          <a href="/#hot-match">电竞</a>
+          <a href="/#hot-match">网球</a>
+          <a href="/#hot-match">F1赛车</a>
+          <a href="/#hot-match">综合大赛</a>
+          <a href="/#schedule">今日赛程</a>
+          <a href="/#analysis">观看指南</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-poster">
+          <div class="live-badge">● LIVE 直播中</div>
+          <div class="poster-title">今日焦点对决</div>
+          <div class="poster-sub">多路信号 · 实时比分 · 专业解说</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 内容简介 ========== -->
+  <section class="intro-section container" id="intro">
+    <div class="intro-card">
+      <p><strong>今日大赛在线观看</strong> 是面向体育迷与赛事观众的内容聚合专题。无论你是想追踪欧洲五大联赛、NBA常规赛、电竞赛季总决赛，还是关注网球大满贯与F1分站赛，这里都能帮你快速定位当天的核心赛程与观看方式。我们整理了直播入口、开赛时间、对阵信息以及赛后回放资源，让“看比赛”这件事不再需要反复搜索。</p>
+      <p>本页内容适合<strong>深度体育迷、竞猜爱好者、上班族碎片化观赛人群</strong>以及刚接触某项运动的新观众。对于资深球迷，可以快速查看多场并行赛事的信号切换与数据对比；对于新观众，页面中的“深度解析”与“FAQ”板块会解释赛事规则、看点以及观看顺序，降低理解门槛。</p>
+      <p>与普通比分网站不同，这里更强调<strong>“观看前中后”的完整链路</strong>：赛前有对阵分析与状态观察，赛中有直播入口与实时数据，赛后有技术统计与精彩回放。如果你经常在搜索引擎里查找“今日大赛在线观看”却翻不到稳定入口，不妨把这个页面加入收藏，每天刷新即可掌握当日大赛动态。</p>
+    </div>
+  </section>
+
+  <!-- ========== 热门推荐卡片 ========== -->
+  <section class="section container" id="hot-match">
+    <div class="section-head">
+      <h2>热门大赛推荐</h2>
+      <a class="more-link" href="/#schedule">查看全部 →</a>
+    </div>
+    <div class="hot-grid">
+      <!-- 卡片 1 -->
+      <div class="hot-card">
+        <span class="card-tag">足球 · 焦点战</span>
+        <h3>英超 曼城 vs 利物浦</h3>
+        <div class="meta-tags"><span>争冠关键</span><span>高位逼抢</span><span>战术博弈</span></div>
+        <p class="excerpt">本轮英超重头戏，两队积分仅差2分，瓜迪奥拉与克洛普的战术斗法再度上演，中场控制权将决定比赛走向。</p>
+        <div class="stats"><span>🔥 热度 98</span><span>11月7日 23:30</span></div>
+      </div>
+      <!-- 卡片 2 -->
+      <div class="hot-card">
+        <span class="card-tag">篮球 · NBA</span>
+        <h3>湖人 vs 勇士 常规赛</h3>
+        <div class="meta-tags"><span>詹库对决</span><span>外线火力</span><span>季后赛预演</span></div>
+        <p class="excerpt">詹姆斯与库里再次碰面，两队近期状态回暖，浓眉哥内线优势与勇士三分雨之间的博弈是最大看点。</p>
+        <div class="stats"><span>🔥 热度 95</span><span>11月8日 10:00</span></div>
+      </div>
+      <!-- 卡片 3 -->
+      <div class="hot-card">
+        <span class="card-tag">电竞 · 全球总决赛</span>
+        <h3>英雄联盟 S赛半决赛</h3>
+        <div class="meta-tags"><span>中韩对抗</span><span>版本理解</span><span>BO5拉满</span></div>
+        <p class="excerpt">LPL一号种子迎战LCK劲旅，双方在瑞士轮已有交手，本次BO5将考验英雄池深度与临场应变能力。</p>
+        <div class="stats"><span>🔥 热度 93</span><span>11月7日 17:00</span></div>
+      </div>
+      <!-- 卡片 4 -->
+      <div class="hot-card">
+        <span class="card-tag">网球 · ATP年终</span>
+        <h3>阿尔卡拉斯 vs 辛纳</h3>
+        <div class="meta-tags"><span>新生代对决</span><span>硬地快节奏</span><span>年终第一之争</span></div>
+        <p class="excerpt">两位00后顶尖选手年终总决赛小组赛相遇，发球与接发的博弈将决定谁能占据出线主动权。</p>
+        <div class="stats"><span>🔥 热度 88</span><span>11月8日 03:00</span></div>
+      </div>
+      <!-- 卡片 5 -->
+      <div class="hot-card">
+        <span class="card-tag">F1 · 巴西站</span>
+        <h3>F1圣保罗大奖赛正赛</h3>
+        <div class="meta-tags"><span>冲刺赛周末</span><span>轮胎策略</span><span>雨战变数</span></div>
+        <p class="excerpt">英特拉格斯赛道以起伏路面和超车机会著称，天气预报有雨，车队策略组将面临巨大考验。</p>
+        <div class="stats"><span>🔥 热度 85</span><span>11月10日 01:00</span></div>
+      </div>
+      <!-- 卡片 6 -->
+      <div class="hot-card">
+        <span class="card-tag">综合 · 乒乓球</span>
+        <h3>WTT冠军赛 男单半决赛</h3>
+        <div class="meta-tags"><span>国乒内战</span><span>前三板争夺</span><span>速度压制</span></div>
+        <p class="excerpt">樊振东与王楚钦再度会师半决赛，两人近期交手互有胜负，接发球环节的细腻程度将左右战局。</p>
+        <div class="stats"><span>🔥 热度 82</span><span>11月7日 19:00</span></div>
+      </div>
+      <!-- 卡片 7 -->
+      <div class="hot-card">
+        <span class="card-tag">足球 · 意甲</span>
+        <h3>国际米兰 vs 尤文图斯</h3>
+        <div class="meta-tags"><span>意大利德比</span><span>防守反击</span><span>争冠六分战</span></div>
+        <p class="excerpt">意甲传统德比，国米主场强势但尤文防守韧性极强，定位球可能成为打破僵局的关键武器。</p>
+        <div class="stats"><span>🔥 热度 80</span><span>11月8日 03:45</span></div>
+      </div>
+      <!-- 卡片 8 -->
+      <div class="hot-card">
+        <span class="card-tag">电竞 · DOTA2</span>
+        <h3>梦幻联赛 S24 淘汰赛</h3>
+        <div class="meta-tags"><span>西欧强队</span><span>BP博弈</span><span>肉山团决胜</span></div>
+        <p class="excerpt">两支夺冠热门在胜者组决赛提前相遇，版本热门英雄的优先级与中期节奏把控将是胜负手。</p>
+        <div class="stats"><span>🔥 热度 76</span><span>11月7日 21:00</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 最新更新 / 热门动态 ========== -->
+  <section class="section container" id="schedule">
+    <div class="section-head">
+      <h2>今日赛程与最新动态</h2>
+      <a class="more-link" href="/#live-entry">返回直播入口 →</a>
+    </div>
+    <div class="update-list">
+      <div class="update-item"><span class="update-title">英超 曼城 vs 利物浦</span><span class="update-desc">赛前发布会结束，双方主力全员健康，首发预计沿用周中欧冠阵容。</span><span class="update-time">11月7日 14:20</span></div>
+      <div class="update-item"><span class="update-title">NBA 湖人 vs 勇士</span><span class="update-desc">勇士更新伤病报告：库里大概率出战，维金斯因个人原因出战成疑。</span><span class="update-time">11月7日 13:05</span></div>
+      <div class="update-item"><span class="update-title">英雄联盟 S赛半决赛</span><span class="update-desc">官方公布首发名单与选边权，LPL战队获得第一局蓝色方。</span><span class="update-time">11月7日 11:40</span></div>
+      <div class="update-item"><span class="update-title">ATP年终总决赛</span><span class="update-desc">辛纳赛前训练加练发球，阿尔卡拉斯表示硬地速度有利于自己正手进攻。</span><span class="update-time">11月7日 10:15</span></div>
+      <div class="update-item"><span class="update-title">F1圣保罗大奖赛</span><span class="update-desc">一练结束，红牛赛车长距离节奏占优，法拉利单圈速度亮眼。</span><span class="update-time">11月7日 09:30</span></div>
+      <div class="update-item"><span class="update-title">WTT冠军赛</span><span class="update-desc">男单八强全部产生，国乒占据四席，半决赛对阵正式出炉。</span><span class="update-time">11月7日 08:50</span></div>
+      <div class="update-item"><span class="update-title">意甲 国米 vs 尤文</span><span class="update-desc">尤文公布大名单，基耶萨领衔锋线，中场核心洛卡特利解禁复出。</span><span class="update-time">11月7日 08:10</span></div>
+      <div class="update-item"><span class="update-title">DOTA2 梦幻联赛</span><span class="update-desc">胜者组决赛对阵确定，双方历史交手记录3:2，本次为BO3。</span><span class="update-time">11月7日 07:45</span></div>
+    </div>
+  </section>
+
+  <!-- ========== 分类入口 ========== -->
+  <section class="section container" id="category">
+    <div class="section-head">
+      <h2>按大赛分类浏览</h2>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-item" href="/#hot-match">足球大赛</a>
+      <a class="cat-item" href="/#hot-match">篮球大赛</a>
+      <a class="cat-item" href="/#hot-match">电竞赛事</a>
+      <a class="cat-item" href="/#hot-match">网球巡回赛</a>
+      <a class="cat-item" href="/#hot-match">赛车F1</a>
+      <a class="cat-item" href="/#hot-match">乒羽赛事</a>
+      <a class="cat-item" href="/#hot-match">综合大赛</a>
+      <a class="cat-item" href="/#hot-match">田径游泳</a>
+    </div>
+  </section>
+
+  <!-- ========== 深度解析正文 ========== -->
+  <section class="section container" id="analysis">
+    <div class="deep-dive">
+      <h2 style="font-size:1.8rem; font-weight:800; margin-bottom:16px;">今日大赛在线观看深度解析：如何看懂一场焦点对决</h2>
+      <p><strong>今日大赛在线观看</strong> 这个搜索词的背后，往往隐藏着几种典型需求：有人想知道今晚有哪些重要比赛，有人想找稳定的直播信号，还有人希望在观赛前快速了解双方实力对比与核心看点。针对这些意图，我们在这个板块里从赛事类型、对阵逻辑、观看节奏和受众适配四个角度展开，帮助你在打开直播前就建立清晰的观赛地图。</p>
+
+      <h3>一、大赛类型决定观看重心</h3>
+      <p>足球大赛的核心在于<strong>空间争夺与攻防转换</strong>。观看英超、欧冠这类高水平对决时，可以重点关注两队在中场的逼抢强度、边后卫的插上幅度以及定位球战术设计。篮球大赛则更强调<strong>节奏控制与对位优势</strong>，比如NBA中持球核心与换防策略的博弈，教练在暂停后的调整往往能直接改变比赛走向。电竞赛事需要观众对版本有一定了解，英雄池、BP顺序、资源团时机都是理解比赛的关键线索。</p>
+      <p>网球和F1属于<strong>个人技术与策略并重</strong>的类型。网球比赛中发球局与接发球局的胜率差异、底线相持中的线路变化，是判断选手状态的重要依据；F1则围绕轮胎策略、进站窗口和赛道位置展开，安全车出动时机往往能颠覆原有格局。了解这些基础逻辑后，你在观看今日大赛在线观看时就不会只盯着比分，而能看到更多层次的内容。</p>
+
+      <h3>二、赛前信息如何筛选</h3>
+      <p>面对一天内多场并行的大赛，筛选优先级很关键。建议先看<strong>积分形势或晋级关系</strong>，涉及争冠、保级或出线的比赛通常强度更高；再看<strong>伤病与首发信息</strong>，核心球员缺阵会显著改变比赛预期；最后关注<strong>赛程密度与体能分配</strong>，连续作战的球队可能在轮换幅度上有所保留。</p>
+      <ul>
+        <li><strong>足球：</strong>关注近5场攻防数据、定位球得分率、中场拦截次数。</li>
+        <li><strong>篮球：</strong>关注三分出手占比、篮板保护率、替补得分贡献。</li>
+        <li><strong>电竞：</strong>关注版本更新后的英雄优先级、战队历史交手与选边权。</li>
+        <li><strong>网球：</strong>关注一发得分率、破发点转化率、硬地赛季胜场数。</li>
+      </ul>
+
+      <h3>三、观赛节奏与时间管理</h3>
+      <p>如果你不是全职观众，建议根据<strong>比赛重要性</strong>分配时间。焦点战可以提前15分钟进入直播页面，了解首发与解说前瞻；并行赛事可以使用多屏或切换观看，重点关注比分变化和关键回合。对于上班族，午休时段适合观看NBA或网球集锦，晚间则更适合完整观看足球或电竞赛事。今日大赛在线观看页面提供的赛程时间均按北京时间标注，方便你提前设置提醒。</p>
+
+      <h3>四、适合人群与观看建议</h3>
+      <p>本页面适合<strong>希望高效获取赛事信息、不想在多个平台之间反复跳转</strong>的观众。如果你是刚接触某项运动的新观众，建议先阅读对应赛事的规则简介与FAQ，再选择一场节奏较快的比赛入门；如果你是资深球迷，可以重点关注深度解析中的战术拆解和赛后数据复盘。无论属于哪类人群，把今日大赛在线观看作为每日赛程入口，都能减少信息搜集成本，把更多时间留给比赛本身。</p>
+    </div>
+  </section>
+
+  <!-- ========== 体验指南 ========== -->
+  <section class="section container" id="guide">
+    <div class="section-head">
+      <h2>观赛体验指南</h2>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-icon">📺</div>
+        <h4>多入口聚合</h4>
+        <p>直播入口、赛程列表与赛事解析集中呈现，减少反复搜索，快速定位目标赛事。</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">📱</div>
+        <h4>移动端适配</h4>
+        <p>页面针对手机阅读优化，卡片式赛程与FAQ展开交互清晰，通勤路上也能快速浏览。</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">⏰</div>
+        <h4>时间标注清晰</h4>
+        <p>所有赛程均标注北京时间，关键场次附带开赛提醒，避免错过焦点对决。</p>
+      </div>
+      <div class="guide-card">
+        <div class="guide-icon">🔁</div>
+        <h4>持续更新</h4>
+        <p>赛果、首发与伤病信息动态补充，收藏本页即可每日查看最新大赛观看指引。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section container" id="faq">
+    <div class="section-head">
+      <h2>今日大赛在线观看常见问题</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary class="faq-q">今天有哪些值得看的大赛？</summary>
+        <div class="faq-a">今日焦点集中在足球英超曼城对利物浦、NBA湖人勇士对决、英雄联盟S赛半决赛以及ATP年终总决赛。足球迷可关注争冠关键战，篮球迷适合观看午间NBA，电竞观众晚间可锁定S赛BO5。建议根据个人兴趣和时间安排选择1-2场完整观看，其余通过集锦补充。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">今日大赛在线观看的直播入口在哪里找？</summary>
+        <div class="faq-a">本页首屏“直播入口”与热门推荐卡片均已指向赛事聚合信息。你可以通过导航栏“直播入口”快速回到首屏，或使用页面内搜索框输入赛事名称查找对应直播指引。建议优先选择官方授权平台，以获得稳定画质与合规信号。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">足球和篮球大赛观看时重点关注什么？</summary>
+        <div class="faq-a">足球重点看中场控制、攻防转换速度与定位球战术；篮球重点看三分效率、篮板保护和对位优势。新手可以先关注比分变化与关键球员表现，逐步理解战术跑位和教练调整逻辑，观赛体验会明显提升。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">电竞赛事没有玩过游戏也能看懂吗？</summary>
+        <div class="faq-a">可以。建议先了解基本目标（推塔/击杀/资源控制）和双方核心选手位置，再观察经济差与关键团战。解说通常会解释版本重点和战术意图，跟随解说节奏观看两三局后，基本就能理解比赛走向。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">错过直播后在哪里看回放？</summary>
+        <div class="faq-a">多数赛事在官方平台提供回放与集锦，通常在赛后1-3小时内上线。本页资讯板块会同步更新重要赛事的回放信息，你也可以关注对应联赛或赛事官方账号获取完整录像。建议优先观看官方渠道回放，画质和稳定性更有保障。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">如何避免错过今天的焦点大赛？</summary>
+        <div class="faq-a">建议在页面“今日赛程”板块确认具体开赛时间，并提前设置手机闹钟。对于特别关注的赛事，可以订阅本页更新提醒，或在官方直播平台设置开播通知。焦点战通常提前30分钟开始赛前分析，提前进入直播间能了解更多背景信息。</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ========== 用户评论 ========== -->
+  <section class="section container" id="comments">
+    <div class="section-head">
+      <h2>网友热评 · 观赛讨论</h2>
+    </div>
+    <div class="comment-grid">
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">张</div><div class="comment-name">看球不熬夜</div><div class="comment-date">11月6日</div></div><div class="comment-text">曼城利物浦这场必须看，中场绞杀肯定激烈。页面赛程时间标得很清楚，省得我到处查了。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">李</div><div class="comment-name">篮球老炮儿</div><div class="comment-date">11月6日</div></div><div class="comment-text">湖人勇士又是午间场，摸鱼看球刚刚好。希望库里别轮休，詹库对决看一场少一场。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">王</div><div class="comment-name">电竞小陈</div><div class="comment-date">11月5日</div></div><div class="comment-text">S赛半决赛BO5拉满，LPL冲！这个页面把首发和选边信息都列了，比官方APP还快一步。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">赵</div><div class="comment-name">网球迷阿杰</div><div class="comment-date">11月5日</div></div><div class="comment-text">阿卡和辛纳这场时间有点晚，凌晨三点实在顶不住，准备早上看回放，希望打满三盘。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">周</div><div class="comment-name">F1策略组</div><div class="comment-date">11月4日</div></div><div class="comment-text">巴西站有雨就精彩了，轮胎策略肯定乱成一锅粥。这个页面的赛前分析写得挺专业。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">吴</div><div class="comment-name">乒乓爱好者</div><div class="comment-date">11月4日</div></div><div class="comment-text">WTT半决赛国乒内战，谁赢都正常，就看临场发挥了。晚上七点时间很友好。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">郑</div><div class="comment-name">意甲老球迷</div><div class="comment-date">11月3日</div></div><div class="comment-text">国米尤文这场防守大战预定，进球可能不会多，但战术含量高，值得熬夜。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">孙</div><div class="comment-name">刀塔云玩家</div><div class="comment-date">11月3日</div></div><div class="comment-text">梦幻联赛关注度一般，但西欧强队BP确实有东西，有空就看两眼。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">刘</div><div class="comment-name">通勤看球</div><div class="comment-date">11月2日</div></div><div class="comment-text">页面收藏了，每天地铁上刷一下赛程，晚上回家挑重点看，效率高多了。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">陈</div><div class="comment-name">体育委员</div><div class="comment-date">11月2日</div></div><div class="comment-text">分类入口挺方便，足球篮球电竞一目了然，希望后续能加上赛果筛选。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">林</div><div class="comment-name">佛系观众</div><div class="comment-date">11月1日</div></div><div class="comment-text">比赛太多看不过来，现在只看焦点战和最后五分钟，其他看集锦，这个页面刚好帮我筛重点。</div></div>
+      <div class="comment-item"><div class="comment-header"><div class="comment-avatar">黄</div><div class="comment-name">数据控</div><div class="comment-date">11月1日</div></div><div class="comment-text">深度解析里的赛前筛选思路很实用，按积分形势和伤病信息排优先级，不浪费时间。</div></div>
+    </div>
+  </section>
+
+  <!-- ========== 相关资讯 ========== -->
+  <section class="section container" id="news">
+    <div class="section-head">
+      <h2>大赛资讯速递</h2>
+    </div>
+    <div class="news-grid">
+      <div class="news-card">
+        <div class="news-date">2026年11月7日</div>
+        <h3>英超争冠关键战前瞻：曼城利物浦中场配置对比</h3>
+        <p>双方均以完整阵容出战，曼城控球体系与利物浦转换进攻的碰撞成为赛前热议焦点，定位球或成胜负手。</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">2026年11月6日</div>
+        <h3>NBA伤病报告更新：库里大概率出战湖人</h3>
+        <p>勇士核心后卫状态升级为大概率出战，湖人方面戴维斯出战成疑，内线轮换或将调整。</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">2026年11月6日</div>
+        <h3>S赛半决赛选边权确定，LPL战队获首局蓝色方</h3>
+        <p>官方公布半决赛赛程与选边结果，蓝色方在版本中拥有一定BP优势，首局争夺至关重要。</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">2026年11月5日</div>
+        <h3>ATP年终总决赛：辛纳加练发球备战硬地快战</h3>
+        <p>辛纳团队表示场地速度有利于进攻型打法，阿尔卡拉斯则认为正手火力能占据主动。</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">2026年11月5日</div>
+        <h3>F1圣保罗站一练：红牛长距离占优，法拉利单圈亮眼</h3>
+        <p>一练数据显示红牛正赛节奏更为稳定，法拉利在软胎单圈上具备竞争力，雨战可能性增大。</p>
+      </div>
+      <div class="news-card">
+        <div class="news-date">2026年11月4日</div>
+        <h3>WTT冠军赛男单八强出炉，国乒占据半壁江山</h3>
+        <p>半决赛对阵正式确定，樊振东与王楚钦再度相遇，前三板争夺将成为比赛核心看点。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 订阅引导（保留首屏与页脚必须模块） ========== -->
+  <section class="bg-soft-block container" id="subscribe" style="text-align:center;">
+    <h2 style="font-size:1.6rem; font-weight:700; margin-bottom:12px;">订阅今日大赛提醒</h2>
+    <p style="color:var(--text-sub); max-width:560px; margin:0 auto 22px;">输入邮箱，获取每日焦点赛事开赛提醒与直播入口更新，不错过任何一场关键对决。</p>
+    <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+      <input type="email" placeholder="你的邮箱地址" style="padding:14px 24px; border-radius:40px; border:1px solid var(--border-light); width:280px; max-width:100%; outline:none;">
+      <button style="padding:14px 36px; border-radius:40px; border:none; background:var(--accent); color:#fff; font-weight:600; cursor:pointer;">立即订阅</button>
+    </div>
+  </section>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>今日大赛在线观看</h4>
+          <p style="font-size:0.85rem; line-height:1.7; opacity:0.8;">聚合每日热门体育与电竞赛事观看指引，提供赛程、解析与资讯参考，帮助观众高效安排观赛时间。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <a href="/#live-entry">直播入口</a>
+          <a href="/#hot-match">热门赛事</a>
+          <a href="/#schedule">今日赛程</a>
+          <a href="/#analysis">深度解析</a>
+          <a href="/#faq">常见问题</a>
+        </div>
+        <div class="footer-col">
+          <h4>分类浏览</h4>
+          <a href="/#hot-match">足球大赛</a>
+          <a href="/#hot-match">篮球大赛</a>
+          <a href="/#hot-match">电竞赛事</a>
+          <a href="/#hot-match">网球巡回赛</a>
+          <a href="/#hot-match">赛车F1</a>
+        </div>
+        <div class="footer-col">
+          <h4>友情链接</h4>
+          <a href="#">体育数据平台（占位）</a>
+          <a href="#">赛事官方合作（占位）</a>
+          <a href="#">电竞资讯站（占位）</a>
+          <a href="#">运动社区（占位）</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 今日大赛在线观看 · 内容仅供参考</span>
+        <span>免责声明：本页面提供的赛事信息与直播指引仅作参考，具体直播信号请以官方授权平台为准。</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+          </html>
