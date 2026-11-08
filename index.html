@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>91短视频网页版-短剧直播短视频在线看_91短视频网页版内容推荐与更新</title>
+  <meta name="description" content="91短视频网页版内容专题页，聚合短剧、直播、短视频在线看入口，提供热门推荐、最新更新、类型解析与观看指南，适合追短剧、看直播、刷短视频的用户收藏。">
+  <meta name="keywords" content="91短视频网页版,短剧在线看,直播短视频,91短视频内容推荐,91短视频最新更新">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f43f5e'/%3E%3Cpath d='M14 12l8 4-8 4z' fill='%23fbbf24'/%3E%3C/svg%3E">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0b0f19;
+      --surface: #131b2c;
+      --surface-2: #1b2438;
+      --surface-3: #222d45;
+      --text: #e6edf7;
+      --text-soft: #a7b2c9;
+      --text-dim: #7e8aa3;
+      --brand: #f43f5e;
+      --brand-2: #fb7185;
+      --accent: #fbbf24;
+      --accent-2: #38bdf8;
+      --border: rgba(255,255,255,0.07);
+      --shadow: 0 8px 28px rgba(0,0,0,0.45);
+      --radius: 14px;
+      --radius-sm: 9px;
+      --max-w: 1200px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+    /* NAV */
+    .top-nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11,15,25,0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 62px; gap: 18px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 19px;
+      letter-spacing: 0.3px; white-space: nowrap;
+    }
+    .logo-mark {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--brand), #f97316);
+      display: grid; place-items: center; font-size: 13px; color: #fff;
+      box-shadow: 0 0 18px rgba(244,63,94,0.45);
+    }
+    .logo span { color: var(--brand); }
+    .nav-links {
+      display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;
+    }
+    .nav-links a {
+      font-size: 13.5px; color: var(--text-soft); padding: 6px 11px;
+      border-radius: 999px; transition: .2s;
+    }
+    .nav-links a:hover { color: #fff; background: var(--surface-3); }
+    /* BANNER */
+    .hero {
+      padding: 40px 0 30px;
+      background:
+        radial-gradient(900px 340px at 82% -10%, rgba(244,63,94,0.20), transparent 65%),
+        radial-gradient(700px 300px at 6% 8%, rgba(56,189,248,0.12), transparent 60%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 34px; align-items: center;
+    }
+    .badge-line {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; color: var(--accent);
+      background: rgba(251,191,36,0.09);
+      border: 1px solid rgba(251,191,36,0.3);
+      padding: 4px 12px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
+    h1 {
+      font-size: clamp(28px, 4.6vw, 44px);
+      line-height: 1.22; font-weight: 800; letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--brand), var(--accent));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-desc { color: var(--text-soft); font-size: 15.5px; max-width: 560px; margin-bottom: 22px; }
+    .hero-desc p + p { margin-top: 6px; }
+    .search-box {
+      display: flex; gap: 10px; max-width: 520px; margin-bottom: 22px;
+    }
+    .search-box input {
+      flex: 1; height: 46px; border-radius: 999px; border: 1px solid var(--border);
+      background: var(--surface-2); padding: 0 20px; color: var(--text); font-size: 14px;
+      outline: none; transition: .2s;
+    }
+    .search-box input:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(244,63,94,0.18); }
+    .search-box button {
+      height: 46px; padding: 0 26px; border: none; border-radius: 999px; cursor: pointer;
+      background: linear-gradient(135deg, var(--brand), #f97316); color: #fff; font-weight: 700; font-size: 14px;
+      box-shadow: 0 6px 20px rgba(244,63,94,0.35); transition: .2s;
+    }
+    .search-box button:hover { transform: translateY(-1px); filter: brightness(1.06); }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hero-tags a {
+      font-size: 12.5px; padding: 6px 14px; border-radius: 999px;
+      background: var(--surface-2); border: 1px solid var(--border); color: var(--text-soft);
+      transition: .2s;
+    }
+    .hero-tags a:hover { border-color: var(--brand); color: #fff; background: var(--surface-3); }
+    .hero-poster {
+      position: relative; border-radius: 18px; overflow: hidden;
+      aspect-ratio: 4/3;
+      background: linear-gradient(145deg, #2a1830 0%, #171f38 50%, #0f172a 100%);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
+    }
+    .hero-poster::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(240px 140px at 76% 22%, rgba(244,63,94,0.42), transparent 70%),
+        radial-gradient(200px 160px at 18% 78%, rgba(56,189,248,0.28), transparent 70%);
+    }
+    .poster-chip {
+      position: relative; z-index: 2;
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: auto;
+    }
+    .poster-chip span {
+      font-size: 11px; padding: 3px 10px; border-radius: 999px;
+      background: rgba(255,255,255,0.11); border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(6px);
+    }
+    .poster-title { position: relative; z-index: 2; font-size: 21px; font-weight: 800; line-height: 1.35; }
+    .poster-sub { position: relative; z-index: 2; font-size: 12.5px; color: var(--text-soft); margin-top: 6px; }
+    .poster-play {
+      position: absolute; z-index: 3; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 58px; height: 58px; border-radius: 50%;
+      background: rgba(244,63,94,0.92); display: grid; place-items: center;
+      box-shadow: 0 0 0 10px rgba(244,63,94,0.16), 0 0 40px rgba(244,63,94,0.5);
+      font-size: 20px; color: #fff; padding-left: 4px;
+    }
+    /* SECTION */
+    section { padding: 46px 0; }
+    .sec-head {
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;
+      margin-bottom: 26px; flex-wrap: wrap;
+    }
+    .sec-head h2 {
+      font-size: clamp(21px, 2.8vw, 27px); font-weight: 800; letter-spacing: -0.3px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .sec-head h2::before {
+      content: ""; width: 5px; height: 22px; border-radius: 4px;
+      background: linear-gradient(180deg, var(--brand), var(--accent));
+    }
+    .sec-head .sub { color: var(--text-dim); font-size: 13px; }
+    .sec-more { font-size: 13px; color: var(--accent-2); white-space: nowrap; }
+    .sec-more:hover { text-decoration: underline; }
+    /* CARDS */
+    .grid-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px; transition: .22s; position: relative; overflow: hidden;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(244,63,94,0.45); box-shadow: var(--shadow); }
+    .card-cover {
+      height: 96px; border-radius: var(--radius-sm); margin-bottom: 14px;
+      background: linear-gradient(135deg, #2c1a3a, #1b2438 60%, #14202f);
+      position: relative; display: flex; align-items: flex-end; padding: 10px;
+      border: 1px solid var(--border); overflow: hidden;
+    }
+    .card-cover::after {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(130px 70px at 78% 18%, rgba(244,63,94,0.4), transparent 70%);
+    }
+    .card-cover .cover-label {
+      position: relative; z-index: 2; font-size: 11px; color: #fff;
+      background: rgba(0,0,0,0.38); border: 1px solid rgba(255,255,255,0.16);
+      padding: 2px 9px; border-radius: 999px; backdrop-filter: blur(4px);
+    }
+    .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; line-height: 1.45; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 9px; }
+    .card-tags span {
+      font-size: 11px; color: var(--text-soft); background: var(--surface-3);
+      padding: 2px 9px; border-radius: 999px;
+    }
+    .card-tags span.hot { color: var(--brand-2); background: rgba(244,63,94,0.13); }
+    .card p { font-size: 13px; color: var(--text-dim); line-height: 1.65; margin-bottom: 12px; }
+    .card-meta { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--text-dim); }
+    .card-meta b { color: var(--accent); font-weight: 600; }
+    /* UPDATE LIST */
+    .update-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .update-item {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 13px 16px; transition: .2s;
+    }
+    .update-item:hover { border-color: rgba(56,189,248,0.4); background: var(--surface-2); }
+    .update-time {
+      font-size: 11px; color: var(--accent-2); background: rgba(56,189,248,0.1);
+      padding: 3px 8px; border-radius: 6px; white-space: nowrap; font-weight: 600;
+    }
+    .update-body h4 { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+    .update-body p { font-size: 12.5px; color: var(--text-dim); }
+    /* CATEGORY */
+    .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .cat-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 16px; display: flex; align-items: center; gap: 12px; transition: .2s;
+    }
+    .cat-item:hover { background: var(--surface-2); border-color: var(--brand); transform: translateY(-2px); }
+    .cat-icon {
+      width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center;
+      font-size: 17px; background: var(--surface-3); flex-shrink: 0;
+    }
+    .cat-item h4 { font-size: 14px; font-weight: 600; }
+    .cat-item span { font-size: 11.5px; color: var(--text-dim); }
+    /* ARTICLE */
+    .article-body {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px 34px;
+    }
+    .article-body h3 { font-size: 18px; font-weight: 700; margin: 24px 0 10px; color: var(--accent); }
+    .article-body h3:first-child { margin-top: 0; }
+    .article-body p { color: var(--text-soft); font-size: 14.5px; margin-bottom: 13px; line-height: 1.85; }
+    .article-body strong { color: var(--text); }
+    .article-body .kw { color: var(--brand-2); font-weight: 600; }
+    /* GUIDE */
+    .guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .guide-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; transition: .2s;
+    }
+    .guide-item:hover { border-color: rgba(251,191,36,0.4); }
+    .guide-num {
+      font-size: 12px; font-weight: 800; color: var(--accent);
+      background: rgba(251,191,36,0.12); width: 30px; height: 30px; border-radius: 8px;
+      display: grid; place-items: center; margin-bottom: 12px;
+    }
+    .guide-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 7px; }
+    .guide-item p { font-size: 13px; color: var(--text-dim); line-height: 1.7; }
+    /* FAQ */
+    .faq-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .faq-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 18px 20px;
+    }
+    .faq-item h4 { font-size: 14.5px; font-weight: 700; margin-bottom: 8px; color: var(--accent-2); display: flex; gap: 8px; }
+    .faq-item h4::before { content: "Q"; font-size: 12px; color: var(--accent); font-weight: 800; }
+    .faq-item p { font-size: 13px; color: var(--text-dim); line-height: 1.75; }
+    /* COMMENT */
+    .comment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .comment-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 14px 16px; transition: .2s;
+    }
+    .comment-item:hover { background: var(--surface-2); }
+    .comment-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; }
+    .comment-user { display: flex; align-items: center; gap: 8px; }
+    .avatar {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--accent-2));
+      display: grid; place-items: center; font-size: 11px; font-weight: 700; color: #fff;
+    }
+    .comment-user b { font-size: 12.5px; font-weight: 600; }
+    .comment-date { font-size: 11px; color: var(--text-dim); }
+    .comment-item p { font-size: 13px; color: var(--text-soft); line-height: 1.7; }
+    /* NEWS */
+    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .news-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; transition: .2s;
+    }
+    .news-card:hover { border-color: rgba(56,189,248,0.35); transform: translateY(-3px); }
+    .news-card .news-date { font-size: 11.5px; color: var(--accent-2); margin-bottom: 8px; }
+    .news-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.5; }
+    .news-card p { font-size: 12.5px; color: var(--text-dim); line-height: 1.7; }
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border); padding: 40px 0 30px; margin-top: 20px;
+      background: var(--surface);
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 30px; margin-bottom: 26px; }
+    .footer-brand .logo { margin-bottom: 12px; }
+    .footer-brand p { font-size: 12.5px; color: var(--text-dim); line-height: 1.8; max-width: 320px; }
+    .footer-col h5 { font-size: 13.5px; font-weight: 700; margin-bottom: 12px; color: var(--text); }
+    .footer-col a { display: block; font-size: 12.5px; color: var(--text-dim); margin-bottom: 8px; transition: .2s; }
+    .footer-col a:hover { color: var(--brand-2); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 20px;
+      display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+      font-size: 11.5px; color: var(--text-dim);
+    }
+    .footer-bottom .disclaimer { max-width: 640px; }
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-poster { max-width: 520px; }
+      .grid-cards { grid-template-columns: repeat(2, 1fr); }
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+      .guide-grid { grid-template-columns: repeat(2, 1fr); }
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 28px 0 22px; }
+      .search-box { flex-direction: column; }
+      .search-box button { width: 100%; }
+      .grid-cards, .update-list, .cat-grid, .guide-grid, .faq-list, .comment-grid, .news-grid { grid-template-columns: 1fr; }
+      .article-body { padding: 22px 18px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      section { padding: 34px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== 导航 ========== -->
+<header class="top-nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="logo" aria-label="91短视频网页版首页">
+      <span class="logo-mark">▶</span>91短视频<span>网页版</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/#hot-recommend">热门推荐</a>
+      <a href="/#latest-update">最新更新</a>
+      <a href="/#deep-analysis">深度解析</a>
+      <a href="/#category-entry">分类入口</a>
+      <a href="/#guide">观看指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ========== 首屏 Banner ========== -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge-line"><span class="dot"></span> 短剧 · 直播 · 短视频 · 实时更新</div>
+      <h1>91短视频网页版<br><em>短剧直播短视频在线看</em> 一站式内容专题</h1>
+      <div class="hero-desc">
+        <p>聚合热门短剧、娱乐直播与创意短视频，按类型、更新节奏和观看热度整理。</p>
+        <p>打开页面即可浏览最新推荐，适合通勤追剧、睡前刷片和碎片时间轻松看。</p>
+      </div>
+      <form class="search-box" onsubmit="return false;">
+        <input type="search" placeholder="搜索短剧名、主播昵称或短视频关键词…" aria-label="站内搜索">
+        <button type="submit">立即搜索</button>
+      </form>
+      <div class="hero-tags">
+        <a href="/#hot-recommend">今日热榜</a>
+        <a href="/#latest-update">刚更新</a>
+        <a href="/#category-entry">短剧专区</a>
+        <a href="/#category-entry">直播频道</a>
+        <a href="/#deep-analysis">类型解析</a>
+        <a href="/#guide">新手观看</a>
+        <a href="/#faq">常见疑问</a>
+        <a href="/#news">动态速递</a>
+      </div>
+    </div>
+    <div class="hero-poster" aria-hidden="true">
+      <div class="poster-chip">
+        <span>正在热播</span><span>更新至第12集</span><span>短剧</span>
+      </div>
+      <div class="poster-play">▶</div>
+      <div class="poster-title">91短视频网页版 · 本周编辑精选</div>
+      <div class="poster-sub">短剧节奏快、直播互动强、短视频易刷停不下来</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 内容简介 ========== -->
+<section id="intro">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>关于91短视频网页版，你想了解什么</h2>
+      <span class="sub">从内容类型到观看方式，一页看懂</span>
+    </div>
+    <div class="article-body">
+      <p><strong>91短视频网页版</strong>是一个以短剧、直播和创意短视频为主的内容专题入口。很多用户在搜索这个词时，想找的并不是单一视频，而是“哪里能看到近期热门短剧”“有没有直播短视频合集”“网页版怎么快速找到感兴趣的内容”。本页面围绕这些真实需求，把内容类型、更新节奏、观看场景和推荐逻辑整理在一起，减少反复跳转和筛选成本。</p>
+      <p>短剧内容通常集数短、反转快，适合碎片时间连续观看；直播板块强调实时互动和主播个人风格；短视频则覆盖生活、搞笑、影视剪辑、技能展示等方向。91短视频网页版把这三类内容放在同一框架下，既保留内容平台的丰富度，又通过专题页的方式做出更清晰的分类和导读。无论你是想找一部下饭短剧、关注某个主播的直播预告，还是想随便刷几条热门短视频，都可以从本页的推荐和分类入口开始。</p>
+      <p>本页面的价值在于“帮你判断先看什么、适合什么时候看、同类内容还有哪些”。我们会结合热度、更新状态和内容标签给出参考，而不是简单堆砌标题。对于习惯在电脑浏览器或手机网页端直接观看的用户，页面结构也尽量照顾到加载速度和移动端可读性。建议收藏本页，后续更新节奏和推荐列表会持续调整，方便你快速回到感兴趣的内容分区。如果你正在找91短视频网页版相关内容，可以先从热门推荐和最新更新两个板块看起，再根据类型解析决定是否深入。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 热门推荐 ========== -->
+<section id="hot-recommend">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>热门内容推荐</h2>
+      <a href="/#latest-update" class="sec-more">查看更多更新 →</a>
+    </div>
+    <div class="grid-cards">
+      <article class="card">
+        <div class="card-cover"><span class="cover-label">短剧 · 都市</span></div>
+        <h3>《替身新娘的逆袭计划》</h3>
+        <div class="card-tags"><span class="hot">热播</span><span>反转</span><span>第18集</span></div>
+        <p>替嫁开局、身份错位，每集三分钟一个反转。适合喜欢快节奏都市短剧的观众，剧情推进不含糊。</p>
+        <div class="card-meta"><span>热度 <b>98.2万</b></span><span>更新至18集</span></div>
+      </article>
+      <article class="card">
+        <div class="card-cover"><span class="cover-label">直播 · 娱乐</span></div>
+        <h3>「小鹿不迷路」深夜电台直播</h3>
+        <div class="card-tags"><span class="hot">人气</span><span>互动</span><span>晚间档</span></div>
+        <p>主打聊天陪伴和点歌互动，弹幕节奏轻松。适合晚上放松时打开，边听边聊，氛围感强。</p>
+        <div class="card-meta"><span>在线 <b>3.4万</b></span><span>每晚21:00</span></div>
+      </article>
+      <article class="card">
+        <div class="card-cover"><span class="cover-label">短视频 · 创意</span></div>
+        <h3>「一分钟电影感」运镜合集</h3>
+        <div class="card-tags"><span>影视剪辑</span><span>运镜</span><span>合集</span></div>
+        <p>把常见生活场景拍出电影质感，镜头语言清晰，适合喜欢拍摄技巧和短视频审美的用户。</p>
+        <div class="card-meta"><span>播放 <b>212万</b></span><span>已完结</span></div>
+      </article>
+      <article class="card">
+        <div class="card-cover"><span class="cover-label">短剧 · 古装</span></div>
+        <h3>《长安夜行录》</h3>
+        <div class="card-tags"><span>古装</span><span>悬疑</span><span>更新中</span></div>
+        <p>以长安城夜间奇案为线索，单元故事串联主线。画面偏暗调，悬疑氛围足，适合喜欢古装探案的用户。</p>
+        <div class="card-meta"><span>热度 <b>76.5万</b></span><span>更新至第9集</span></div>
+      </article>
+      <article class="card">
+        <div class="card-cover"><span class="cover-label">直播 · 带货</span></div>
+        <h3>「阿哲好物间」生活专场</h3>
+        <div class="card-tags"><span>带货</span><span>生活</span><span>晚8点</span></div>
+        <p>生活用品和零食为主，讲解节奏快，适合想快速了解实用好物又不想看长视频的用户。</p>
+        <div class="card-meta"><span>观看 <b>1.8万</b></span><span>今晚20:00</span></div>
+      </article>
+      <article class="card">
+        <div class="card-cover"><span class="cover-label">短视频 · 搞笑</span></div>
+        <h3>「办公室生存指南」系列</h3>
+        <div class="card-tags"><span>搞笑</span><span>职场</span><span>系列</span></div>
+        <p>用夸张表演还原职场日常，单条30秒左右，节奏紧凑，适合午休和通勤时刷几条放松。</p>
+        <div class="card-meta"><span>播放 <b>486万</b></span><span>持续更新</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 最新更新 ========== -->
+<section id="latest-update">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>最新更新与热播动态</h2>
+      <span class="sub">数据整理于 2026年11月7日</span>
+    </div>
+    <div class="update-list">
+      <div class="update-item"><span class="update-time">11-07</span><div class="update-body"><h4>《替身新娘的逆袭计划》第18集上线</h4><p>身份真相接近揭晓，主线冲突进入后半程。</p></div></div>
+      <div class="update-item"><span class="update-time">11-07</span><div class="update-body"><h4>「小鹿不迷路」今晚21:00开播</h4><p>主题为“初冬歌单”，支持弹幕点歌和连麦互动。</p></div></div>
+      <div class="update-item"><span class="update-time">11-06</span><div class="update-body"><h4>《长安夜行录》更新至第9集</h4><p>新单元案件开启，前情线索开始回收。</p></div></div>
+      <div class="update-item"><span class="update-time">11-06</span><div class="update-body"><h4>「一分钟电影感」发布新运镜教程</h4><p>本期主题为“手持跟拍转稳定器过渡”，适合进阶拍摄者。</p></div></div>
+      <div class="update-item"><span class="update-time">11-05</span><div class="update-body"><h4>「阿哲好物间」周末场预告</h4><p>增加家居收纳和冬季小家电选品，直播时长约两小时。</p></div></div>
+      <div class="update-item"><span class="update-time">11-05</span><div class="update-body"><h4>「办公室生存指南」第32条上线</h4><p>本期聚焦“临时会议”，单条播放已破50万。</p></div></div>
+      <div class="update-item"><span class="update-time">11-04</span><div class="update-body"><h4>短剧专区新增“逆袭”分类</h4><p>集中收录身份反转、成长线明确的短剧内容。</p></div></div>
+      <div class="update-item"><span class="update-time">11-04</span><div class="update-body"><h4>直播频道上线“回放精选”入口</h4><p>方便错过直播的用户补看高互动片段。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 分类入口 ========== -->
+<section id="category-entry">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>分类入口</h2>
+      <span class="sub">按内容类型快速定位</span>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-item" href="/#hot-recommend"><div class="cat-icon">🎬</div><div><h4>都市短剧</h4><span>反转 · 逆袭 · 情感</span></div></a>
+      <a class="cat-item" href="/#hot-recommend"><div class="cat-icon">🏮</div><div><h4>古装短剧</h4><span>悬疑 · 权谋 · 探案</span></div></a>
+      <a class="cat-item" href="/#hot-recommend"><div class="cat-icon">📺</div><div><h4>娱乐直播</h4><span>聊天 · 点歌 · 互动</span></div></a>
+      <a class="cat-item" href="/#hot-recommend"><div class="cat-icon">🛍️</div><div><h4>带货直播</h4><span>好物 · 生活 · 专场</span></div></a>
+      <a class="cat-item" href="/#hot-recommend"><div class="cat-icon">😂</div><div><h4>搞笑短视频</h4><span>段子 · 职场 · 日常</span></div></a>
+      <a class="cat-item" href="/#hot-recommend"><div class="cat-icon">🎥</div><div><h4>影视剪辑</h4><span>运镜 · 混剪 · 解说</span></div></a>
+      <a class="cat-item" href="/#latest-update"><div class="cat-icon">🔄</div><div><h4>今日更新</h4><span>新集 · 新作 · 预告</span></div></a>
+      <a class="cat-item" href="/#guide"><div class="cat-icon">🧭</div><div><h4>观看指南</h4><span>入门 · 避坑 · 推荐</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 深度解析 ========== -->
+<section id="deep-analysis">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>深度解析：91短视频网页版的内容逻辑</h2>
+      <span class="sub">编辑视角 · 类型与观看体验</span>
+    </div>
+    <div class="article-body">
+      <h3>短剧为什么在网页版里依然有吸引力</h3>
+      <p>短剧的核心竞争力在于“单位时间内的信息密度”。一集往往只有几分钟，开场即冲突，结尾留钩子，用户不需要长时间铺垫就能进入剧情。在<strong>91短视频网页版</strong>这样的入口里，短剧通常按类型和更新状态排列，用户更容易判断“这部是已完结还是追更中”“适不适合一次性刷完”。从观看体验看，网页版短剧更适合在电脑前连续点击播放，也适合手机浏览器横屏观看。对习惯检索片名和关键词的用户，网页版的内容标题和标签更直观，找同类内容更快。</p>
+      <h3>直播与短视频的互补关系</h3>
+      <p>直播板块提供实时感，用户进入直播间后能立刻看到主播状态、弹幕互动和在线人数，这种即时反馈是短视频无法替代的。而短视频更像“可回看的直播切片”或“主题合集”，适合错过直播后补看精彩片段。91短视频网页版将两者放在同一页面框架下，减少用户在不同入口之间反复切换的麻烦。对于只想随便看看的用户，短视频的连续播放更轻松；对于有明确陪伴或互动需求的人，直播频道更合适。</p>
+      <h3>标签、热度和更新状态决定点击顺序</h3>
+      <p>内容推荐如果只按发布时间排序，很容易变成“新内容很多、但不知道看哪个”。本页面在推荐卡片中同时给出类型标签、热度参考和更新集数，目的就是帮助用户快速判断。比如同样是短剧，“热播+反转+更新至18集”和“古装+悬疑+更新至第9集”指向的观看预期不同，前者适合想看强冲突的用户，后者更适合慢热沉浸型观众。短视频标签则更多体现内容方向，比如运镜、搞笑、职场等，方便按兴趣筛选。</p>
+      <h3>适合哪些人收藏这个页面</h3>
+      <p>如果你经常在搜索引擎里找“91短视频网页版最近有什么好看的内容”，这个专题页就是为这种需求准备的。它适合三类人：一是短剧爱好者，需要快速了解更新进度和类型；二是直播用户，想提前看到开播时间和主题；三是短视频轻度用户，希望有编辑筛选和分类入口，减少无效滑动。页面本身不追求花哨交互，而是尽量保证信息密度和可读性，让用户在一屏内获得足够判断依据。</p>
+      <h3>与同类内容站相比，本页更关注什么</h3>
+      <p>同类内容入口常见的问题是标题堆砌、分类模糊、缺少观看建议。本页面更强调“内容类型 + 更新状态 + 观看场景”的组合表达，同时保留搜索、分类、FAQ和评论等模块，让页面不仅是一个列表，也能承担解释和导览的作用。对搜索引擎而言，这种结构也更容易理解页面主题和长尾语义，围绕<strong>91短视频网页版</strong>、短剧在线看、直播短视频等需求形成清晰的内容层次。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 体验指南 ========== -->
+<section id="guide">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>观看与体验指南</h2>
+      <span class="sub">让浏览路径更顺畅</span>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-item"><div class="guide-num">01</div><h4>先看分类再看榜单</h4><p>如果目的不明确，先从分类入口缩小范围，再参考热门推荐的标签和更新状态，比直接翻长列表更高效。</p></div>
+      <div class="guide-item"><div class="guide-num">02</div><h4>关注更新节奏</h4><p>短剧和直播都依赖更新频率。追更用户可优先看“最新更新”板块，确认当天是否有新集或开播提醒。</p></div>
+      <div class="guide-item"><div class="guide-num">03</div><h4>善用标签筛选</h4><p>标签比标题更能说明内容方向。喜欢快节奏就看“反转”“逆袭”，喜欢氛围感就看“悬疑”“古装”。</p></div>
+      <div class="guide-item"><div class="guide-num">04</div><h4>移动端阅读友好</h4><p>页面针对手机浏览器做了单列自适应，卡片和文字不会过度拥挤，适合通勤路上快速浏览和收藏。</p></div>
+      <div class="guide-item"><div class="guide-num">05</div><h4>用FAQ解决入门疑问</h4><p>常见问题覆盖类型选择、观看顺序和更新关注点，新用户可以先看FAQ，再决定从哪个内容开始。</p></div>
+      <div class="guide-item"><div class="guide-num">06</div><h4>收藏页面方便回访</h4><p>内容更新频率较高，收藏本页后可以快速回到热门推荐和最新更新，减少重复搜索。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>常见问题</h2>
+      <span class="sub">围绕91短视频网页版的内容选择与观看</span>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>91短视频网页版主要包含哪些内容类型？</h4>
+        <p>页面内容以短剧、直播和短视频为主。短剧偏向剧情连续、集数短；直播侧重实时互动和主播个人风格；短视频覆盖搞笑、影视剪辑、生活技巧等方向。分类入口和标签会帮助区分不同内容，方便按兴趣浏览。</p>
+      </div>
+      <div class="faq-item">
+        <h4>第一次看短剧，应该从哪类开始？</h4>
+        <p>如果喜欢强冲突和快节奏，可以先看标签含“反转”“逆袭”的都市短剧；如果更看重氛围和故事线，可以选“古装”“悬疑”类型。每张推荐卡片都标注了更新状态，已完结的更适合一次性刷完。</p>
+      </div>
+      <div class="faq-item">
+        <h4>直播和短视频在观看顺序上怎么安排？</h4>
+        <p>直播有固定开播时间，适合按预告提前关注；短视频没有时间限制，适合碎片时间连续看。如果当天有感兴趣的直播，可以先看直播，再把短视频作为错过片段或补充内容。</p>
+      </div>
+      <div class="faq-item">
+        <h4>页面上的热度、更新信息有参考价值吗？</h4>
+        <p>热度和更新状态是编辑根据页面内容整理的参考信息，用来帮助判断内容讨论度和追更节奏，不代表唯一标准。建议结合类型标签和个人偏好一起看，不要只依赖单一数值。</p>
+      </div>
+      <div class="faq-item">
+        <h4>适合在手机网页端看吗？</h4>
+        <p>页面采用响应式布局，手机端会自动切换为单列卡片和更紧凑的间距，正文和FAQ保持可读。短剧和短视频类内容在手机浏览器中浏览较方便，直播则建议在稳定网络环境下观看。</p>
+      </div>
+      <div class="faq-item">
+        <h4>如何找到和某部短剧类似的内容？</h4>
+        <p>可以先看该短剧卡片上的类型标签，再回到分类入口或热门推荐中查找相同标签的内容。深度解析和编辑推荐也会提到同类方向，适合作为延伸浏览的起点。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 用户评论 ========== -->
+<section id="comments">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>用户评论</h2>
+      <span class="sub">近30天 · 混合观点</span>
+    </div>
+    <div class="comment-grid">
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">林</div><b>林间小鹿</b></div><span class="comment-date">11-06</span></div><p>短剧更新速度可以，替身新娘这部越到后面越上头，就是每集太短了不够看。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">阿</div><b>阿哲的观众</b></div><span class="comment-date">11-05</span></div><p>直播预告挺清楚，周末场比平时长一点，选品也更实用，适合挂着当背景音。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">橙</div><b>橙子汽水</b></div><span class="comment-date">11-05</span></div><p>短视频那个运镜合集不错，讲得比很多教程直接，适合拍vlog的人看。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">夜</div><b>夜行长安</b></div><span class="comment-date">11-04</span></div><p>长安夜行录画面偏暗，白天看有点费眼，但悬疑感确实做出来了，会继续追。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">小</div><b>小满不忙</b></div><span class="comment-date">11-04</span></div><p>页面分类还算清楚，就是希望短剧能标一下每集大概几分钟，方便判断适不适合下饭看。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">大</div><b>大橘为重</b></div><span class="comment-date">11-03</span></div><p>办公室生存指南太真实了，每期都感觉在演我，已经安利给同事。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">桃</div><b>桃桃乌龙</b></div><span class="comment-date">11-03</span></div><p>深夜电台直播氛围可以，但有时候弹幕节奏太快，跟不上聊天节奏。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">追</div><b>追更选手</b></div><span class="comment-date">11-02</span></div><p>最新更新板块挺实用，一眼就知道哪个短剧更了，不用一个个点。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">北</div><b>北岸初晴</b></div><span class="comment-date">11-02</span></div><p>古装短剧选得还可以，希望多来点权谋类型，现在悬疑偏多。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">镜</div><b>镜头之外</b></div><span class="comment-date">11-01</span></div><p>影视剪辑区的审美在线，不是那种纯卡点，会讲一点镜头逻辑，挺难得。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">晚</div><b>晚风慢慢</b></div><span class="comment-date">10-31</span></div><p>直播回放入口方便，错过的场次还能补一下高能片段，希望以后多保留几天。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">路</div><b>路过看看</b></div><span class="comment-date">10-30</span></div><p>整体还可以，就是热门推荐里短剧占比有点高，想多看到点不同方向的短视频。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">拾</div><b>拾光笔记</b></div><span class="comment-date">10-29</span></div><p>FAQ回答得比较实在，没绕弯子，新用户看一遍基本知道怎么选了。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">豆</div><b>豆沙包</b></div><span class="comment-date">10-28</span></div><p>替身新娘的演员演技有惊喜，虽然制作不算大，但节奏真的快。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">星</div><b>星野拾贝</b></div><span class="comment-date">10-27</span></div><p>希望分类里再加一个“已完结”筛选，追更等更有点难受。</p></div>
+      <div class="comment-item"><div class="comment-head"><div class="comment-user"><div class="avatar">清</div><b>清风不识字</b></div><span class="comment-date">10-25</span></div><p>网页版整体加载速度可以，手机上滑着不卡，这点好评。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 相关资讯 ========== -->
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>相关资讯</h2>
+      <span class="sub">内容动态 · 编辑整理</span>
+    </div>
+    <div class="news-grid">
+      <article class="news-card"><div class="news-date">2026-11-06</div><h4>短剧专区本周浏览热度上升，都市反转类最受关注</h4><p>从页面点击和收藏情况看，节奏快、集数短的都市短剧仍是主流选择，古装悬疑类紧随其后。</p></article>
+      <article class="news-card"><div class="news-date">2026-11-05</div><h4>直播频道更新开播预告，晚间档互动场次增加</h4><p>本周娱乐直播和带货直播均增加了晚间时段，适合下班后观看，部分场次支持回放。</p></article>
+      <article class="news-card"><div class="news-date">2026-11-04</div><h4>短视频运镜教程系列更新，聚焦手持拍摄过渡技巧</h4><p>新一期内容围绕稳定器与手持镜头切换展开，适合有基础拍摄需求的内容创作者参考。</p></article>
+      <article class="news-card"><div class="news-date">2026-11-03</div><h4>《长安夜行录》进入新单元，前情线索开始回收</h4><p>更新至第9集后，主线案件与单元故事逐步交汇，观众讨论集中在人物动机和后续走向。</p></article>
+      <article class="news-card"><div class="news-date">2026-11-02</div><h4>91短视频网页版优化分类入口，新增“今日更新”聚合</h4><p>分类入口数量增加，用户可更快找到当天更新的短剧、直播预告和短视频新作。</p></article>
+      <article class="news-card"><div class="news-date">2026-10-31</div><h4>观众评论显示：短剧“每集时长”成为选择重要参考</h4><p>不少用户希望卡片信息更直观地展示单集时长和总集数，方便判断是否适合碎片时间观看。</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 页脚 ========== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark">▶</span>91短视频<span>网页版</span></div>
+        <p>短剧、直播与短视频内容专题页，聚合热门推荐、更新动态和类型解析。页面信息用于内容导览与观看参考，具体内容以实际页面为准。</p>
+      </div>
+      <div class="footer-col">
+        <h5>内容导航</h5>
+        <a href="/#hot-recommend">热门推荐</a>
+        <a href="/#latest-update">最新更新</a>
+        <a href="/#deep-analysis">深度解析</a>
+        <a href="/#category-entry">分类入口</a>
+        <a href="/#guide">观看指南</a>
+      </div>
+      <div class="footer-col">
+        <h5>帮助与反馈</h5>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#hero">返回顶部</a>
+        <a href="/">首页入口</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 91短视频网页版内容专题页 · 本页为内容导览与信息整理页面</span>
+      <span class="disclaimer">免责声明：页面中涉及的内容名称、更新信息、热度数据和用户评论均为页面展示与阅读参考，不构成任何内容承诺。友情链接位可替换为合规站点。</span>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
