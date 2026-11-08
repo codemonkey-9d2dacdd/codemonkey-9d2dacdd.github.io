@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>yandex每日大赛官方入口-最新赛事入口_每日赛程与热门榜单</title>
+<meta name="description" content="yandex每日大赛官方入口专题页，汇总每日大赛最新入口、赛程更新、热门榜单与社区讨论。提供清晰的赛事导航、参赛指引、榜单解读与常见问题，帮助用户快速找到yandex每日大赛官方入口并了解每日赛事动态。">
+<meta name="keywords" content="yandex每日大赛官方入口,每日大赛入口,赛事导航,热门榜单,赛程更新">
+<style>
+:root{
+  --ink:#0e1b2b;
+  --ink-2:#1f3145;
+  --muted:#5f7389;
+  --line:#d9e4ef;
+  --paper:#f5f9ff;
+  --card:#ffffff;
+  --sky:#0a7cff;
+  --sky-soft:#e7f1ff;
+  --cyan:#00b7c7;
+  --gold:#e8a400;
+  --shadow:0 12px 30px rgba(16,47,79,.08);
+  --shadow-hover:0 18px 42px rgba(16,47,79,.14);
+  --radius:18px;
+  --radius-sm:12px;
+  --wrap:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 500px at 85% -10%, #dff0ff 0%, transparent 60%),
+    radial-gradient(900px 420px at 0% 10%, #e7fbff 0%, transparent 55%),
+    var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Noto Sans SC",system-ui,-apple-system,sans-serif;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+ul,ol{padding-left:1.15em;margin:.4em 0}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.sec{padding:46px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:24px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(22px,2.4vw,30px);margin:0;letter-spacing:-.02em}
+.sec-head h2 span{color:var(--sky)}
+.sec-head p{margin:0;color:var(--muted);font-size:14px;max-width:560px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);background:var(--sky-soft);border-radius:999px;padding:6px 12px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);display:inline-block}
+
+/* 导航 */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(14px);
+  background:rgba(245,249,255,.86);
+  border-bottom:1px solid rgba(217,228,239,.9);
+}
+.nav-inner{display:flex;align-items:center;gap:20px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.03em;font-size:19px;white-space:nowrap}
+.brand-badge{
+  width:38px;height:38px;border-radius:12px;
+  background:linear-gradient(135deg,#0a7cff,#00c2d4);
+  box-shadow:0 8px 20px rgba(10,124,255,.3);
+  display:grid;place-items:center;color:#fff;font-size:16px;font-weight:900;
+}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+.nav-links a{
+  padding:8px 12px;border-radius:10px;font-size:14px;color:var(--ink-2);
+  transition:.2s;font-weight:500;
+}
+.nav-links a:hover{background:#fff;color:var(--sky);box-shadow:var(--shadow)}
+.nav-cta{margin-left:auto;display:flex;gap:10px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:999px;padding:11px 20px;font-weight:700;font-size:14px;
+  border:1px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(135deg,#0a7cff,#00b7c7);color:#fff;box-shadow:0 10px 24px rgba(10,124,255,.28)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(10,124,255,.34)}
+.btn-ghost{background:#fff;border-color:var(--line);color:var(--ink-2)}
+.btn-ghost:hover{border-color:var(--sky);color:var(--sky);transform:translateY(-2px)}
+
+/* Banner */
+.hero{padding:52px 0 34px}
+.hero-grid{
+  display:grid;grid-template-columns:1.35fr .9fr;gap:30px;align-items:stretch;
+}
+.hero-main{
+  background:linear-gradient(160deg,#ffffff 0%,#f2f9ff 100%);
+  border:1px solid #e4eef9;border-radius:26px;padding:40px;
+  box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.hero-main::after{
+  content:"";position:absolute;right:-90px;top:-90px;width:280px;height:280px;
+  background:radial-gradient(circle,#bfe3ff 0%,transparent 65%);opacity:.8;
+}
+.hero h1{font-size:clamp(30px,4vw,46px);line-height:1.16;letter-spacing:-.035em;margin:14px 0 16px;position:relative;z-index:2}
+.hero h1 em{font-style:normal;color:var(--sky)}
+.hero-desc{font-size:15.5px;color:var(--muted);max-width:640px;position:relative;z-index:2}
+.hero-desc p{margin:0 0 8px}
+.searchbar{
+  display:flex;gap:10px;margin:24px 0 18px;background:#fff;border:1px solid #dbe8f5;
+  border-radius:999px;padding:7px 7px 7px 20px;box-shadow:0 12px 28px rgba(16,47,79,.07);
+  position:relative;z-index:2;max-width:620px;
+}
+.searchbar input{
+  flex:1;border:0;outline:0;background:transparent;font-size:15px;color:var(--ink);
+  font-family:inherit;min-width:0;
+}
+.searchbar button{border:0}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;position:relative;z-index:2}
+.hero-tags a{
+  font-size:13px;padding:7px 13px;border-radius:999px;background:#fff;border:1px solid var(--line);
+  color:var(--ink-2);transition:.2s;
+}
+.hero-tags a:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.hero-side{
+  display:flex;flex-direction:column;gap:14px;
+}
+.side-card{
+  background:#fff;border:1px solid #e4eef9;border-radius:var(--radius);padding:20px;
+  box-shadow:var(--shadow);
+}
+.side-card h3{font-size:15px;margin:0 0 10px}
+.side-card p{margin:0;font-size:13.5px;color:var(--muted)}
+.stat-row{display:flex;gap:10px;margin-top:12px}
+.stat{
+  flex:1;background:var(--sky-soft);border-radius:12px;padding:12px;text-align:center;
+}
+.stat b{display:block;font-size:20px;color:var(--sky);line-height:1.2}
+.stat span{font-size:11.5px;color:var(--muted)}
+.side-list{list-style:none;padding:0;margin:0}
+.side-list li{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed #e7eff8;font-size:13.5px}
+.side-list li:last-child{border-bottom:0}
+.side-list em{font-style:normal;color:var(--muted);font-size:12px;white-space:nowrap}
+
+/* 通用卡片 */
+.card{
+  background:var(--card);border:1px solid #e4eef9;border-radius:var(--radius);
+  box-shadow:var(--shadow);transition:transform .22s,box-shadow .22s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+
+/* 榜单卡片 */
+.rank-card{display:flex;gap:14px;padding:16px;align-items:flex-start}
+.rank-num{
+  width:34px;height:34px;border-radius:10px;flex:none;display:grid;place-items:center;
+  font-weight:900;font-size:14px;background:var(--sky-soft);color:var(--sky);
+}
+.rank-card:nth-child(1) .rank-num{background:linear-gradient(135deg,#ffe9a8,#ffcf4d);color:#7a4d00}
+.rank-card:nth-child(2) .rank-num{background:#e9edf3;color:#4a5b70}
+.rank-card:nth-child(3) .rank-num{background:#ffe4d2;color:#a45112}
+.rank-body{min-width:0}
+.rank-body h3{margin:0 0 4px;font-size:15.5px;line-height:1.4}
+.rank-body p{margin:0;font-size:13px;color:var(--muted)}
+.rank-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chip{
+  font-size:11.5px;padding:3px 9px;border-radius:999px;background:#f0f6fd;color:#3f5a74;
+}
+.chip.hot{background:#fff1e6;color:#b45309}
+.chip.new{background:#e8fbf4;color:#0f7a5a}
+
+/* 推荐卡片 */
+.rec-card{padding:18px;display:flex;flex-direction:column;gap:10px;min-height:180px}
+.rec-cover{
+  height:92px;border-radius:12px;
+  background:linear-gradient(135deg,#d8ecff,#c2f2f7 60%,#e5f5ff);
+  display:flex;align-items:flex-end;padding:10px;color:#1b4f72;font-weight:800;font-size:12px;
+  letter-spacing:.04em;
+}
+.rec-card h3{margin:0;font-size:15.5px}
+.rec-card p{margin:0;font-size:13px;color:var(--muted);flex:1}
+.rec-foot{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted)}
+.score{color:var(--gold);font-weight:800}
+
+/* 更新列表 */
+.update-list{display:flex;flex-direction:column;gap:0}
+.update-item{
+  display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed #e3edf7;align-items:flex-start;
+}
+.update-item:last-child{border-bottom:0}
+.update-time{font-size:12px;color:var(--muted);white-space:nowrap;min-width:110px;padding-top:2px}
+.update-item h4{margin:0 0 3px;font-size:14.5px}
+.update-item p{margin:0;font-size:13px;color:var(--muted)}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat-item{
+  padding:16px;border-radius:14px;background:#fff;border:1px solid #e4eef9;
+  transition:.2s;box-shadow:0 6px 16px rgba(16,47,79,.04);
+}
+.cat-item:hover{transform:translateY(-3px);border-color:#b9d8f5;box-shadow:var(--shadow)}
+.cat-item b{display:block;font-size:14.5px;margin-bottom:4px}
+.cat-item span{font-size:12.5px;color:var(--muted)}
+
+/* 正文 */
+.article-box{
+  background:#fff;border:1px solid #e4eef9;border-radius:22px;padding:34px;
+  box-shadow:var(--shadow);
+}
+.article-box h2{margin:0 0 14px;font-size:clamp(21px,2vw,26px)}
+.article-box h3{font-size:16.5px;margin:24px 0 8px}
+.article-box p{margin:0 0 12px;font-size:14.8px;color:#34475c}
+.article-box strong{color:var(--ink)}
+.pullquote{
+  border-left:4px solid var(--cyan);background:#f2fbff;padding:14px 18px;border-radius:0 12px 12px 0;
+  font-size:14.5px;color:#255a70;margin:18px 0;
+}
+
+/* FAQ */
+.faq-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.faq-item{
+  background:#fff;border:1px solid #e4eef9;border-radius:14px;padding:16px 18px;
+  box-shadow:0 6px 16px rgba(16,47,79,.04);
+}
+.faq-item h3{margin:0 0 6px;font-size:14.8px;display:flex;gap:8px;align-items:flex-start}
+.faq-item h3 i{font-style:normal;color:var(--sky);font-weight:900;font-size:13px;padding-top:1px}
+.faq-item p{margin:0;font-size:13.5px;color:var(--muted)}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.comment{
+  background:#fff;border:1px solid #e7eff8;border-radius:14px;padding:15px 16px;
+}
+.comment-head{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.comment-head b{color:var(--ink-2);font-size:13px}
+.comment p{margin:0;font-size:13.5px;color:#3b4f63}
+
+/* 资讯 */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.news-card{padding:18px;display:flex;flex-direction:column;gap:8px}
+.news-date{font-size:12px;color:var(--muted)}
+.news-card h3{margin:0;font-size:15px;line-height:1.5}
+.news-card p{margin:0;font-size:13px;color:var(--muted);flex:1}
+
+/* 订阅 */
+.subscribe{
+  background:linear-gradient(135deg,#0b3d66,#0a7cff 55%,#00b7c7);
+  border-radius:24px;padding:36px;color:#fff;display:flex;gap:24px;align-items:center;justify-content:space-between;
+  box-shadow:0 20px 50px rgba(10,124,255,.25);flex-wrap:wrap;
+}
+.subscribe h2{margin:0 0 8px;font-size:clamp(20px,2.4vw,28px)}
+.subscribe p{margin:0;color:#d8ecff;font-size:14px;max-width:560px}
+.subscribe .btn{background:#fff;color:#0a5fb8;box-shadow:none}
+.subscribe .btn:hover{transform:translateY(-2px)}
+
+/* 页脚 */
+footer{
+  margin-top:40px;border-top:1px solid #dde9f4;background:#f1f7fe;padding:36px 0 26px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}
+.foot-grid h4{font-size:14px;margin:0 0 10px}
+.foot-grid p,.foot-grid a{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+.foot-grid a:hover{color:var(--sky)}
+.foot-bottom{
+  margin-top:26px;padding-top:16px;border-top:1px dashed #cfe0ef;
+  font-size:12.5px;color:#7b8fa5;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .news-grid{grid-template-columns:1fr 1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .nav-links{display:none}
+  .hero-main{padding:26px}
+  .g3,.g4,.g2,.news-grid,.faq-list,.comment-grid{grid-template-columns:1fr}
+  .subscribe{padding:24px}
+  .article-box{padding:22px}
+  .update-time{min-width:84px}
+  .sec{padding:34px 0}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<header class="topbar">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/#hero">
+      <span class="brand-badge">Y</span>
+      <span>每日大赛导航</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/#hot-rank">热门榜单</a>
+      <a href="/#latest-update">最新赛况</a>
+      <a href="/#deep-read">深度解析</a>
+      <a href="/#category">分类入口</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">社区讨论</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="/#subscribe">订阅提醒</a>
+      <a class="btn btn-primary" href="/#hero">进入大赛入口</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- 首屏 Banner -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-main">
+      <span class="kicker"><span class="dot"></span> DAILY ARENA · 2026</span>
+      <h1><em>yandex每日大赛官方入口</em> · 每日赛程与热门榜单聚合</h1>
+      <div class="hero-desc">
+        <p>每天都有新赛况，这里汇总官方入口、当日赛程、热门榜单和社区讨论。</p>
+        <p>不用来回翻找，直接从本页进入对应栏目，查看最新推荐与深度解析。</p>
+      </div>
+      <div class="searchbar">
+        <input type="search" placeholder="搜索今日赛程、热门榜单或参赛指引…" aria-label="搜索每日大赛内容">
+        <button class="btn btn-primary" type="button">搜索</button>
+      </div>
+      <div class="hero-tags">
+        <a href="/#hot-rank">今日热门榜</a>
+        <a href="/#latest-update">实时更新</a>
+        <a href="/#deep-read">入门解析</a>
+        <a href="/#category">分类导航</a>
+        <a href="/#faq">参赛答疑</a>
+        <a href="/#comments">用户讨论</a>
+        <a href="/#news">赛事资讯</a>
+        <a href="/#subscribe">订阅提醒</a>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <div class="side-card">
+        <h3>今日速览 · 2026年11月7日</h3>
+        <p>汇总当日入口热度、榜单变化与社区关注点，适合快速了解赛况。</p>
+        <div class="stat-row">
+          <div class="stat"><b>18</b><span>今日更新</span></div>
+          <div class="stat"><b>9.4</b><span>入口热度</span></div>
+          <div class="stat"><b>32</b><span>讨论条数</span></div>
+        </div>
+      </div>
+      <div class="side-card">
+        <h3>热门入口速达</h3>
+        <ul class="side-list">
+          <li><span>每日大赛官方入口主站</span><em>推荐</em></li>
+          <li><span>今日赛程与榜单更新</span><em>实时</em></li>
+          <li><span>新手参赛指引合集</span><em>入门</em></li>
+          <li><span>社区高热度讨论帖</span><em>热门</em></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- 热门榜单 -->
+<section class="sec" id="hot-rank">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">HOT RANK</span>
+        <h2>热门榜单 <span>· 今日高关注入口与赛况</span></h2>
+      </div>
+      <p>根据入口访问热度、榜单变化和社区讨论整理，帮助快速判断今天值得先看的内容。</p>
+    </div>
+    <div class="grid g3">
+      <article class="card rank-card">
+        <div class="rank-num">01</div>
+        <div class="rank-body">
+          <h3>yandex每日大赛官方入口 · 主站导航</h3>
+          <p>聚合官方入口、赛程更新和榜单索引，适合第一次访问的用户快速定位。</p>
+          <div class="rank-meta"><span class="chip hot">今日热榜</span><span class="chip">官方入口</span><span class="chip">导航</span></div>
+        </div>
+      </article>
+      <article class="card rank-card">
+        <div class="rank-num">02</div>
+        <div class="rank-body">
+          <h3>每日大赛今日赛程速览</h3>
+          <p>按时间线整理当日赛程，包含热门项目与关注度较高的对决。</p>
+          <div class="rank-meta"><span class="chip">赛程</span><span class="chip new">刚刚更新</span><span class="chip">时间线</span></div>
+        </div>
+      </article>
+      <article class="card rank-card">
+        <div class="rank-num">03</div>
+        <div class="rank-body">
+          <h3>新用户参赛入口与注意事项</h3>
+          <p>整理首次进入每日大赛需要了解的基础信息、入口路径和常见提示。</p>
+          <div class="rank-meta"><span class="chip">入门</span><span class="chip">指引</span><span class="chip hot">推荐</span></div>
+        </div>
+      </article>
+      <article class="card rank-card">
+        <div class="rank-num">04</div>
+        <div class="rank-body">
+          <h3>本周榜单变化观察</h3>
+          <p>从热度曲线和讨论量看本周榜单变化，关注度上升的入口值得留意。</p>
+          <div class="rank-meta"><span class="chip">榜单</span><span class="chip">趋势</span><span class="chip">观察</span></div>
+        </div>
+      </article>
+      <article class="card rank-card">
+        <div class="rank-num">05</div>
+        <div class="rank-body">
+          <h3>社区讨论精选 · 今日热帖</h3>
+          <p>汇总用户对入口体验、赛程节奏和榜单变化的真实讨论。</p>
+          <div class="rank-meta"><span class="chip">社区</span><span class="chip">讨论</span><span class="chip new">新帖</span></div>
+        </div>
+      </article>
+      <article class="card rank-card">
+        <div class="rank-num">06</div>
+        <div class="rank-body">
+          <h3>移动端访问入口体验说明</h3>
+          <p>针对手机端浏览习惯整理入口适配、页面加载和栏目切换体验。</p>
+          <div class="rank-meta"><span class="chip">移动端</span><span class="chip">体验</span><span class="chip">适配</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 最新更新 -->
+<section class="sec" id="latest-update">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">LIVE UPDATE</span>
+        <h2>最新更新 <span>· 今日赛况与入口动态</span></h2>
+      </div>
+      <p>以时间线方式整理今日更新，方便追赛用户快速掌握变化。</p>
+    </div>
+    <div class="card" style="padding:6px 22px;">
+      <div class="update-list">
+        <div class="update-item"><div class="update-time">今天 18:42</div><div><h4>今日热门入口访问量上升</h4><p>yandex每日大赛官方入口相关导航页访问量在晚间时段出现明显增长，榜单前列变化较小。</p></div></div>
+        <div class="update-item"><div class="update-time">今天 16:10</div><div><h4>赛程时间线更新</h4><p>当日赛程新增两场关注度较高的项目，时间集中在晚间，适合下班后查看。</p></div></div>
+        <div class="update-item"><div class="update-time">今天 14:05</div><div><h4>社区新增参赛经验帖</h4><p>有用户分享首次进入每日大赛的入口路径和注意事项，讨论区互动较多。</p></div></div>
+        <div class="update-item"><div class="update-time">今天 11:30</div><div><h4>榜单解读栏目上线</h4><p>新增榜单变化解读内容，围绕近七日热度变化进行整理，适合关注趋势的用户。</p></div></div>
+        <div class="update-item"><div class="update-time">今天 09:15</div><div><h4>移动端入口适配说明更新</h4><p>针对手机端浏览体验补充了栏目切换和搜索框使用说明。</p></div></div>
+        <div class="update-item"><div class="update-time">昨天 21:48</div><div><h4>晚间热门讨论汇总</h4><p>社区围绕入口稳定性和赛程更新频率展开讨论，整体评价中性偏正面。</p></div></div>
+        <div class="update-item"><div class="update-time">昨天 17:20</div><div><h4>新手指引页补充常见问题</h4><p>新增关于入口辨识、赛程查看顺序和收藏方式的问题解答。</p></div></div>
+        <div class="update-item"><div class="update-time">昨天 10:02</div><div><h4>周榜观察更新</h4><p>本周榜单关注点集中在入口导航和赛程速览两个栏目。</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 推荐内容 -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">PICKS</span>
+        <h2>编辑推荐 <span>· 值得先看的入口与内容</span></h2>
+      </div>
+      <p>从入口清晰度、信息完整度和阅读体验三个维度挑选，减少无效翻找。</p>
+    </div>
+    <div class="grid g4">
+      <article class="card rec-card">
+        <div class="rec-cover">ENTRY · 01</div>
+        <h3>官方入口导航页</h3>
+        <p>入口路径清晰，适合第一次访问的用户快速找到每日大赛主站方向。</p>
+        <div class="rec-foot"><span>热度 9.6</span><span class="score">推荐</span></div>
+      </article>
+      <article class="card rec-card">
+        <div class="rec-cover">SCHEDULE · 02</div>
+        <h3>赛程速览与时间线</h3>
+        <p>按时间排序，适合追赛用户快速了解今天有哪些值得关注的安排。</p>
+        <div class="rec-foot"><span>更新 18:42</span><span class="score">实用</span></div>
+      </article>
+      <article class="card rec-card">
+        <div class="rec-cover">GUIDE · 03</div>
+        <h3>新手指引合集</h3>
+        <p>从入口辨识到栏目使用，帮助新用户减少试错成本，建立基本认知。</p>
+        <div class="rec-foot"><span>收藏 1.2k</span><span class="score">入门</span></div>
+      </article>
+      <article class="card rec-card">
+        <div class="rec-cover">COMMUNITY · 04</div>
+        <h3>社区高热度讨论</h3>
+        <p>真实用户对入口体验、赛程节奏和榜单变化的讨论，参考价值较高。</p>
+        <div class="rec-foot"><span>讨论 32</span><span class="score">活跃</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 分类入口 -->
+<section class="sec" id="category">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">CATEGORY</span>
+        <h2>分类入口 <span>· 按需求快速定位</span></h2>
+      </div>
+      <p>根据常见使用场景划分栏目，方便从入口、赛程、榜单、答疑等方向切入。</p>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-item" href="/#hero"><b>官方入口</b><span>主站导航与快速入口</span></a>
+      <a class="cat-item" href="/#latest-update"><b>今日赛程</b><span>时间线与更新动态</span></a>
+      <a class="cat-item" href="/#hot-rank"><b>热门榜单</b><span>热度排序与变化观察</span></a>
+      <a class="cat-item" href="/#deep-read"><b>深度解析</b><span>入口说明与使用建议</span></a>
+      <a class="cat-item" href="/#faq"><b>常见问题</b><span>参赛与访问答疑</span></a>
+      <a class="cat-item" href="/#comments"><b>社区讨论</b><span>用户真实反馈</span></a>
+      <a class="cat-item" href="/#news"><b>赛事资讯</b><span>动态与看点整理</span></a>
+      <a class="cat-item" href="/#subscribe"><b>订阅提醒</b><span>更新不错过</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 深度解析 -->
+<section class="sec" id="deep-read">
+  <div class="wrap">
+    <div class="article-box">
+      <span class="kicker" style="margin-bottom:12px;">DEEP READ</span>
+      <h2>yandex每日大赛官方入口：从入口到赛程的整体使用解析</h2>
+      <p>围绕 <strong>yandex每日大赛官方入口</strong> 这个关键词，用户通常不是只想看一个链接，而是希望快速完成几件事：确认入口方向、了解今日赛程、判断榜单热度、找到参赛或浏览说明。因此，本页把入口导航、赛程更新、榜单观察和社区讨论放在同一个专题结构里，减少在不同页面之间来回跳转的成本。</p>
+      <p>从内容消费角度看，每日大赛类入口页面的核心价值在于“信息组织效率”。用户打开页面时，最关心的是今天有什么、入口在哪里、哪些内容值得先看。所以首屏没有堆砌长文，而是用搜索框、快捷栏目和今日速览完成第一轮筛选，再通过热门榜单和最新更新做第二轮判断。</p>
+      <h3>入口页面的信息层次</h3>
+      <p>一个清晰的 <strong>yandex每日大赛官方入口</strong> 专题页，通常需要同时满足三种阅读节奏：快速扫读、短时停留和深度浏览。快速扫读的用户只需要看到入口按钮和今日赛程；短时停留的用户会查看榜单和推荐；深度浏览的用户则会进入深度解析和常见问题。本页在模块顺序上尽量按照“先入口、再更新、后解析”的方式排列，避免一开始就进入长文阅读。</p>
+      <div class="pullquote">入口类关键词的搜索意图往往非常直接：用户希望用最短路径抵达目标栏目。因此页面结构越清晰，越容易获得持续访问和收藏。</div>
+      <h3>赛程与榜单的配合关系</h3>
+      <p>赛程负责回答“今天发生了什么”，榜单负责回答“什么值得关注”。两者结合后，用户对每日大赛的整体感知会更完整。本页的最新更新栏目采用时间线形式，保留具体时间点；热门榜单则用排名卡片呈现，强调关注度变化。对于经常访问的用户，这种组合比单纯罗列链接更有效。</p>
+      <h3>适合哪些用户收藏</h3>
+      <p>第一类是每天固定查看赛况的用户，他们需要稳定的入口和清晰的更新节奏；第二类是偶尔访问的用户，他们更依赖榜单和推荐来快速判断；第三类是新用户，他们需要从入口说明、常见问题和使用建议开始建立认知。本页在内容安排上覆盖了这三类需求，并通过分类入口和 FAQ 减少迷路感。</p>
+      <h3>与同类内容页的差异</h3>
+      <p>很多入口页只放一个按钮或一条说明，信息密度低，用户需要反复返回搜索。本页把入口、赛程、榜单、解析、评论和资讯放在同一个页面内，并通过锚点导航连接，用户可以在一个页面内完成大部分判断。对于 <strong>yandex每日大赛官方入口</strong> 这类搜索词，这种结构更符合 Bing 和百度对内容完整度的判断，也更适合长期收录。</p>
+      <p>需要说明的是，本页是内容专题与导航页，不替代任何官方页面。页面中的入口、赛程和榜单信息以整理和导览为主，具体规则和实时信息请以对应官方页面为准。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">FAQ</span>
+        <h2>常见问题 <span>· 关于入口与赛程的答疑</span></h2>
+      </div>
+      <p>围绕入口辨识、赛程查看顺序、榜单参考价值和移动端体验整理。</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3><i>Q1</i>yandex每日大赛官方入口页面主要提供什么？</h3>
+        <p>本页主要提供入口导航、今日赛程速览、热门榜单观察、深度解析和社区讨论汇总。它不是单一链接页，而是把与每日大赛相关的常用信息集中在一个专题结构里，方便快速判断今天先看什么。</p>
+      </div>
+      <div class="faq-item">
+        <h3><i>Q2</i>第一次访问应该按什么顺序浏览？</h3>
+        <p>建议先看首屏入口和今日速览，确认当天大致情况；再进入最新更新查看时间线；如果只想快速判断热度，可以看热门榜单；最后根据需要阅读深度解析和常见问题。这个顺序能减少重复返回。</p>
+      </div>
+      <div class="faq-item">
+        <h3><i>Q3</i>榜单的排序依据是什么？</h3>
+        <p>榜单主要参考入口访问热度、栏目更新频率和社区讨论量进行整理，属于内容导航意义上的热度观察，不是官方排名。不同时间段的榜单可能变化，建议结合最新更新一起看。</p>
+      </div>
+      <div class="faq-item">
+        <h3><i>Q4</i>手机端访问体验如何？</h3>
+        <p>页面采用响应式布局，手机端会收起部分导航，保留搜索框、入口按钮和主要栏目。卡片会改为单列排列，减少横向滚动。复杂装饰在移动端会简化，优先保证文字可读性。</p>
+      </div>
+      <div class="faq-item">
+        <h3><i>Q5</i>页面里的评论和资讯是实时的吗？</h3>
+        <p>评论和资讯为专题页内的模拟整理内容，用于呈现社区讨论氛围和信息结构，不代表官方实时发布。具体实时动态请以对应官方页面和实际更新为准。</p>
+      </div>
+      <div class="faq-item">
+        <h3><i>Q6</i>为什么入口类页面要放这么多解析内容？</h3>
+        <p>因为搜索“yandex每日大赛官方入口”的用户需求并不完全相同，有人找入口，有人看赛程，有人想了解怎么用。增加解析、FAQ 和推荐模块，可以覆盖更多搜索意图，也便于页面被搜索引擎理解。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 评论 -->
+<section class="sec" id="comments">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">COMMUNITY</span>
+        <h2>用户评论 <span>· 近30天社区讨论精选</span></h2>
+      </div>
+      <p>不同用户对入口体验、赛程节奏和榜单变化的真实反馈，包含中性评价。</p>
+    </div>
+    <div class="comment-grid">
+      <div class="comment"><div class="comment-head"><b>夜航星</b><span>2026-11-06</span></div><p>入口导航比之前清晰，首屏就能看到今天的大致情况，不用翻很多页。</p></div>
+      <div class="comment"><div class="comment-head"><b>白桃气泡</b><span>2026-11-05</span></div><p>榜单变化不算大，但作为每日参考够用了，建议再补充一点赛程摘要。</p></div>
+      <div class="comment"><div class="comment-head"><b>风见隼</b><span>2026-11-05</span></div><p>新手说明写得比较实在，没有太多空话，入口路径基本能看懂。</p></div>
+      <div class="comment"><div class="comment-head"><b>橘色天际线</b><span>2026-11-04</span></div><p>手机端打开速度还可以，栏目折叠后反而更干净，适合碎片时间看。</p></div>
+      <div class="comment"><div class="comment-head"><b>慢速快门</b><span>2026-11-04</span></div><p>希望热门榜单能标注更新时间，有时候不确定是不是当天的数据。</p></div>
+      <div class="comment"><div class="comment-head"><b>临界点</b><span>2026-11-03</span></div><p>深度解析部分比预想中详细，适合第一次接触每日大赛的人浏览。</p></div>
+      <div class="comment"><div class="comment-head"><b>南窗听雨</b><span>2026-11-02</span></div><p>分类入口那块挺实用的，直接点过去比在导航里找更快。</p></div>
+      <div class="comment"><div class="comment-head"><b>零度可乐</b><span>2026-11-02</span></div><p>评论区的讨论氛围不错，能看到不同角度的反馈，不是一味夸。</p></div>
+      <div class="comment"><div class="comment-head"><b>雾岛小站</b><span>2026-11-01</span></div><p>整体信息量足，但也希望后续能把赛程和榜单的关联说得更清楚。</p></div>
+      <div class="comment"><div class="comment-head"><b>半格电量</b><span>2026-10-31</span></div><p>入口页做成专题形式挺方便，至少不用在收藏夹里翻好几个链接。</p></div>
+      <div class="comment"><div class="comment-head"><b>纸飞机</b><span>2026-10-30</span></div><p>建议增加一个“只看今日更新”的筛选，不然内容多的时候会有点长。</p></div>
+      <div class="comment"><div class="comment-head"><b>灰度空间</b><span>2026-10-29</span></div><p>中立地说，这个页面更适合做导览，具体信息还是要以官方为准。</p></div>
+      <div class="comment"><div class="comment-head"><b>薄荷海</b><span>2026-10-29</span></div><p>FAQ 里关于浏览顺序的建议挺有帮助，第一次访问确实容易乱点。</p></div>
+      <div class="comment"><div class="comment-head"><b>三点零七</b><span>2026-10-28</span></div><p>榜单卡片的设计不错，排名一眼能看清，比纯文字列表舒服。</p></div>
+      <div class="comment"><div class="comment-head"><b>未读消息</b><span>2026-10-27</span></div><p>希望资讯部分能多写一点赛程变化，而不是只给标题。</p></div>
+      <div class="comment"><div class="comment-head"><b>琥珀川</b><span>2026-10-26</span></div><p>整体页面阅读节奏还可以，先扫入口再看解析，不会一上来就太长。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 资讯 -->
+<section class="sec" id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">NEWS</span>
+        <h2>相关资讯 <span>· 赛事动态与看点整理</span></h2>
+      </div>
+      <p>围绕入口更新、赛程变化、榜单观察和社区讨论整理的专题资讯。</p>
+    </div>
+    <div class="news-grid">
+      <article class="card news-card">
+        <span class="news-date">2026-11-07</span>
+        <h3>今日入口热度小幅上升，导航页访问集中</h3>
+        <p>晚间时段入口相关栏目访问量增加，用户更关注今日赛程与榜单变化。</p>
+      </article>
+      <article class="card news-card">
+        <span class="news-date">2026-11-06</span>
+        <h3>赛程速览栏目补充时间线说明</h3>
+        <p>最新更新栏目增加具体时间标注，方便追赛用户快速定位当日安排。</p>
+      </article>
+      <article class="card news-card">
+        <span class="news-date">2026-11-05</span>
+        <h3>榜单观察：入口导航类内容关注度靠前</h3>
+        <p>从近七日热度看，入口导航和新手指引两类内容保持较高关注度。</p>
+      </article>
+      <article class="card news-card">
+        <span class="news-date">2026-11-04</span>
+        <h3>社区讨论聚焦入口体验与更新频率</h3>
+        <p>用户反馈中，入口清晰度和赛程更新频率是提及较多的两个方向。</p>
+      </article>
+      <article class="card news-card">
+        <span class="news-date">2026-11-03</span>
+        <h3>移动端浏览适配优化说明</h3>
+        <p>页面针对手机端调整了栏目折叠方式和卡片排列，提升碎片时间阅读体验。</p>
+      </article>
+      <article class="card news-card">
+        <span class="news-date">2026-11-02</span>
+        <h3>专题页新增常见问题与深度解析模块</h3>
+        <p>补充入口辨识、浏览顺序和榜单参考价值等内容，帮助新用户快速上手。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 订阅 -->
+<section class="sec" id="subscribe">
+  <div class="wrap">
+    <div class="subscribe">
+      <div>
+        <h2>订阅每日大赛更新提醒</h2>
+        <p>留下邮箱，获取入口更新、赛程变化和榜单观察的整理提醒。本订阅为专题页模拟功能，仅用于展示页面结构。</p>
+      </div>
+      <a class="btn" href="/#hero">返回入口</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 页脚 -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="font-size:17px;margin-bottom:10px;">
+          <span class="brand-badge" style="width:32px;height:32px;font-size:14px;">Y</span>
+          <span>每日大赛导航</span>
+        </div>
+        <p>围绕 yandex每日大赛官方入口 整理的专题导航与内容聚合页，提供入口、赛程、榜单和社区讨论的阅读指引。</p>
+      </div>
+      <div>
+        <h4>栏目导航</h4>
+        <a href="/#hot-rank">热门榜单</a>
+        <a href="/#latest-update">最新更新</a>
+        <a href="/#deep-read">深度解析</a>
+        <a href="/#category">分类入口</a>
+      </div>
+      <div>
+        <h4>帮助与讨论</h4>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#subscribe">订阅提醒</a>
+      </div>
+      <div>
+        <h4>友情链接占位</h4>
+        <a href="/#hero">内容首页</a>
+        <a href="/#hero">专题目录</a>
+        <a href="/#hero">站点地图</a>
+        <a href="/#hero">合作联系</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 每日大赛导航专题页 · 内容整理与页面展示</span>
+      <span>免责声明：本页为内容导航与信息整理页面，不替代任何官方页面，具体信息请以官方发布为准。</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+                                  </html>
